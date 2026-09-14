@@ -1,0 +1,432 @@
+/* Bid Gate Checklist — static publishable page */
+:root {
+  --bg: #f7f5f1;
+  --ink: #1a1a1a;
+  --muted: #5a5a5a;
+  --card: #ffffff;
+  --line: #e2ddd4;
+  --accent: #0d5c4d;
+  --accent-hover: #094438;
+  --quiet: #3d3d3d;
+  --badge: #eef6f3;
+  --max: 42rem;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  background: var(--card);
+}
+
+.brand {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero {
+  padding: 2.5rem 1.25rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.promise {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+
+.honesty {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  font-size: 0.98rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-quiet {
+  background: transparent;
+  color: var(--quiet);
+  border-color: var(--line);
+}
+
+.btn-quiet:hover { border-color: var(--muted); }
+
+.btn-secondary {
+  background: var(--card);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-secondary:hover { background: var(--badge); }
+
+.section {
+  padding: 1.75rem 1.25rem;
+}
+
+.section h2 {
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.steps li { margin-bottom: 0.4rem; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  margin: 0.85rem 0;
+}
+
+.gate h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.pass {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.check {
+  display: block;
+  margin: 0.35rem 0;
+  cursor: pointer;
+}
+
+.check input { margin-right: 0.4rem; }
+
+.hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.fields {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.verdict .decision {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.soft summary {
+  cursor: pointer;
+}
+
+.soft ul { margin: 0.75rem 0 0.5rem; }
+
+.copy-block pre {
+  background: #f0ebe3;
+  border-radius: 4px;
+  padding: 0.85rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.paid .pack-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.35rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--badge);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin: 0 0 0.75rem;
+}
+
+.fine {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.faq dt {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.faq dd {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+}
+
+.faq a { color: var(--accent); }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0 2.5rem;
+  margin-top: 1rem;
+  background: var(--card);
+}
+
+.site-footer p { margin: 0.25rem 0; }
+
+.site-footer code {
+  font-size: 0.85em;
+  background: #f0ebe3;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+@media print {
+  .site-header, .cta-row, .paid, .btn, footer .fine { display: none; }
+  body { background: #fff; font-size: 11pt; }
+  .card { break-inside: avoid; border-color: #ccc; }
+}
+
+/* --- Bid-Gate scorer (client-side) --- */
+.scorer-form textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fafaf8;
+  resize: vertical;
+  margin: 0 0 0.85rem;
+}
+
+.scorer-form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  background: #fff;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin: 0.35rem 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.field-label .req {
+  color: #8a2f2f;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.field-label .opt {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.score-output {
+  margin-top: 1rem;
+}
+
+.score-banner {
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  border: 2px solid var(--line);
+  margin-bottom: 0.85rem;
+}
+
+.score-banner .score-label {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.score-banner .score-verdict {
+  margin: 0.15rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.score-banner .score-summary {
+  margin: 0.35rem 0 0;
+}
+
+.score-banner .score-counts {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.score-go {
+  background: #e8f6ef;
+  border-color: #0d5c4d;
+  color: #094438;
+}
+
+.score-caution {
+  background: #fff8e6;
+  border-color: #c49214;
+  color: #5c4508;
+}
+
+.score-skip {
+  background: #fdeeee;
+  border-color: #a33b3b;
+  color: #6b1f1f;
+}
+
+.score-gates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.score-gate {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin: 0.55rem 0;
+}
+
+.score-gate.status-pass { border-left: 4px solid #0d5c4d; }
+.score-gate.status-caution { border-left: 4px solid #c49214; }
+.score-gate.status-fail { border-left: 4px solid #a33b3b; }
+
+.score-gate-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.score-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #f0ebe3;
+}
+
+.status-pass .score-mark { background: #d4efe4; color: #094438; }
+.status-caution .score-mark { background: #f5e6b8; color: #5c4508; }
+.status-fail .score-mark { background: #f5cfcf; color: #6b1f1f; }
+
+.score-status {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.score-reason {
+  margin: 0.45rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.score-honesty {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.85rem 0;
+}
+
+.score-next {
+  margin-top: 0.5rem;
+}
+
+.score-next .btn { margin-top: 0.35rem; }
+
+@media print {
+  .scorer-section, .score-output { display: none; }
+}

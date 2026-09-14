@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>60-Second Upwork Bid Gate Checklist (Before You Spend Connects)</title>
+  <meta name="description" content="Free 60-second pre-submit checklist + client-side GO/CAUTION/SKIP scorer: live buyer, clear deliverable, truthful delivery, margin, risk, access. Optional $12 printable pack — no fake win claims.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://langfordoutcomes.com/tools/bid-gate-checklist">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="brand">Langford Outcomes</p>
+      <p class="tagline">Practical ops tools — no fabricated social proof</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- A. Hero -->
+    <section class="hero wrap" id="top">
+      <h1>60-Second Upwork Bid Gate Checklist (Before You Spend Connects)</h1>
+      <p class="promise">Stop burning Connects and proposals on jobs that fail a hard gate.</p>
+      <p class="honesty">Free checklist + free browser scorer on this page. Optional paid printable pack. We do not claim past sales or client wins.</p>
+      <p class="cta-row">
+        <a class="btn btn-primary" href="#scorer">Score a job (free, in-browser)</a>
+        <a class="btn btn-quiet" href="#checklist">Manual checklist</a>
+        <a class="btn btn-quiet" href="#paid-pack">Optional $12 pack (Getly)</a>
+      </p>
+    </section>
+
+    <!-- B. Who this is for -->
+    <section class="wrap section" id="who">
+      <h2>Who this is for</h2>
+      <ul>
+        <li>Freelancers, solo operators, and AI-assisted teams who bid on Upwork-class marketplaces</li>
+        <li>People searching for job-score / before-you-bid / proposal-quality checks</li>
+        <li><strong>Not</strong> for autopilot spam tools or “spray and pray” Connects burners</li>
+      </ul>
+    </section>
+
+    <!-- C. How it works -->
+    <section class="wrap section" id="how">
+      <h2>How it works (60–90 seconds)</h2>
+      <ol class="steps">
+        <li>Paste the job text (optional: your profile or draft proposal)</li>
+        <li>Run the free <strong>heuristic scorer</strong> — six HARD gates, client-side only</li>
+        <li>Read <strong>GO / CAUTION / SKIP</strong> plus per-gate marks</li>
+        <li>Any HARD <strong>NO</strong> → do not submit</li>
+        <li>All clear → write a one-line delivery plan, then bid</li>
+      </ol>
+      <p class="fine">Scorer method: keyword &amp; heuristic rubric (v1). <strong>Not an LLM</strong>. No API key. Your text stays in the browser.</p>
+    </section>
+
+    <!-- C2. Interactive scorer -->
+    <section class="wrap section scorer-section" id="scorer">
+      <h2>Free Bid-Gate scorer</h2>
+      <p>Paste a job. Optionally paste your profile or draft proposal for the truthful-delivery check. Scoring runs locally — nothing is uploaded.</p>
+
+      <form id="bid-gate-form" class="card scorer-form" autocomplete="off">
+        <label class="field-label" for="job-text">Job text <span class="req">required</span></label>
+        <textarea id="job-text" name="job" rows="8" placeholder="Paste the job post / RFP / brief here…" required></textarea>
+
+        <label class="field-label" for="profile-text">Your profile or proposal draft <span class="opt">optional</span></label>
+        <textarea id="profile-text" name="profile" rows="5" placeholder="Paste skills, relevant profile blurbs, or a draft proposal to check fit overlap…"></textarea>
+
+        <p class="form-actions">
+          <button type="submit" class="btn btn-primary" id="score-run">Score gates</button>
+          <button type="button" class="btn btn-quiet" id="score-clear">Clear</button>
+        </p>
+        <p class="fine">Honest label: transparent keyword/heuristic scorer — useful triage, not a prediction of wins or income.</p>
+      </form>
+
+      <div id="score-output" class="score-output" hidden></div>
+    </section>
+
+    <!-- D. Free checklist -->
+    <section class="wrap section checklist-section" id="checklist">
+      <h2>Free checklist — six HARD gates</h2>
+      <p>Mark <strong>YES</strong> only if true <em>today</em> with evidence you can show. Missing evidence = treat as <strong>NO</strong>. Any HARD NO → <strong>SUBMIT_BLOCKED</strong>.</p>
+
+      <div class="job-header card">
+        <h3>Job header (optional notes)</h3>
+        <ul class="fields">
+          <li>Date · Surface / marketplace</li>
+          <li>Job URL · Title (short)</li>
+          <li>Posted budget · Your proposed price</li>
+          <li>Expected delivery cost · Platform fee %</li>
+        </ul>
+      </div>
+
+      <article class="gate card" id="gate-1">
+        <h3><span class="num">1</span> LIVE_BUYER</h3>
+        <p class="pass">Pass if: real open ask / live listing.</p>
+        <label class="check"><input type="checkbox"> <strong>YES</strong> — Buyer is real and actively seeking work</label>
+        <label class="check"><input type="checkbox"> <strong>NO</strong> — Speculative, closed, or no buyer signal</label>
+        <p class="hint">Evidence (1 line): _______________________________</p>
+      </article>
+
+      <article class="gate card" id="gate-2">
+        <h3><span class="num">2</span> DELIVERABLE_CLEAR</h3>
+        <p class="pass">Pass if: scope concrete enough to accept.</p>
+        <label class="check"><input type="checkbox"> <strong>YES</strong> — Format, artifacts, and acceptance criteria are clear enough</label>
+        <label class="check"><input type="checkbox"> <strong>NO</strong> — Vague “help with X” or undefined success</label>
+        <p class="hint">Deliverable in one sentence: _______________________</p>
+      </article>
+
+      <article class="gate card" id="gate-3">
+        <h3><span class="num">3</span> CAN_TRUTHFULLY_DELIVER</h3>
+        <p class="pass">Pass if: you can deliver without lying about skills or access.</p>
+        <label class="check"><input type="checkbox"> <strong>YES</strong> — You can produce it with tools and skills you actually have</label>
+        <label class="check"><input type="checkbox"> <strong>NO</strong> — Would require fake portfolio, missing credentials, or specialists you lack</label>
+        <p class="hint">Who delivers · Tools required: _____________________</p>
+      </article>
+
+      <article class="gate card" id="gate-4">
+        <h3><span class="num">4</span> POSITIVE_UNIT_MARGIN</h3>
+        <p class="pass">Pass if: expected net after fees &gt; real delivery cost.</p>
+        <label class="check"><input type="checkbox"> <strong>YES</strong> — Expected revenue after fees beats tools + honest human time</label>
+        <label class="check"><input type="checkbox"> <strong>NO</strong> — Fee + cost eats the job, or unpaid trial with no cash path</label>
+        <p class="hint">Net $ ____ − Cost $ ____ = Margin $ ____</p>
+      </article>
+
+      <article class="gate card" id="gate-5">
+        <h3><span class="num">5</span> RISK_ACCEPTABLE</h3>
+        <p class="pass">Pass if: no legal / safety / PII fatal you cannot handle.</p>
+        <label class="check"><input type="checkbox"> <strong>YES</strong> — Risk is manageable; no regulated practice you cannot do</label>
+        <label class="check"><input type="checkbox"> <strong>NO</strong> — Illegal scraping, unprotected PII, or advice you cannot give</label>
+        <p class="hint">Top risk + mitigation: ____________________________</p>
+      </article>
+
+      <article class="gate card" id="gate-6">
+        <h3><span class="num">6</span> TRANSACTION_ACCESS</h3>
+        <p class="pass">Pass if: you can actually submit and get paid <em>now</em> (or Owner-gate queued — do not fake-submit).</p>
+        <label class="check"><input type="checkbox"> <strong>YES</strong> — Account ready; can submit and get paid</label>
+        <label class="check"><input type="checkbox"> <strong>OWNER_GATE</strong> — Needs Owner KYC / payout / approval — queue, do not bypass</label>
+        <label class="check"><input type="checkbox"> <strong>NO</strong> — Blocked with no path this cycle</label>
+        <p class="hint">Access note: _____________________________________</p>
+      </article>
+
+      <div class="verdict card">
+        <h3>HARD verdict</h3>
+        <ul>
+          <li>All 1–5 = YES <strong>and</strong> (6 = YES or OWNER_GATE with Owner ready) → may prepare proposal</li>
+          <li>Any HARD = NO → <strong>SUBMIT_BLOCKED</strong> — do not send</li>
+          <li>OWNER_GATE and Owner not available → park in queue — do not bypass</li>
+        </ul>
+        <p class="decision">Decision: ☐ PASS · ☐ BLOCKED · ☐ OWNER_GATE</p>
+      </div>
+
+      <details class="card soft">
+        <summary><strong>SOFT signals (optional)</strong> — never alone kill or approve</summary>
+        <ul>
+          <li>AI / Bot advantage on this job?</li>
+          <li>Why not DIY (buyer side)?</li>
+          <li>Competitor density · Repeat potential · Copyability</li>
+          <li>Owner attention tax if won</li>
+        </ul>
+        <p class="hint">EV ≈ P(win) × expected gross margin − proposal cost − Owner cost.</p>
+      </details>
+
+      <div class="card copy-block">
+        <h3>Copy-paste markdown (quick)</h3>
+        <pre id="md-block">## Bid gate — 6 HARD
+- [ ] 1 LIVE_BUYER
+- [ ] 2 DELIVERABLE_CLEAR
+- [ ] 3 CAN_TRUTHFULLY_DELIVER
+- [ ] 4 POSITIVE_UNIT_MARGIN
+- [ ] 5 RISK_ACCEPTABLE
+- [ ] 6 TRANSACTION_ACCESS (YES | OWNER_GATE)
+Any NO → do not submit.</pre>
+        <button type="button" class="btn btn-secondary" id="copy-md">Copy markdown</button>
+      </div>
+    </section>
+
+    <!-- E. What this is not -->
+    <section class="wrap section" id="not">
+      <h2>What this is <em>not</em></h2>
+      <ul>
+        <li>Not an AI that auto-sends proposals</li>
+        <li>Not a Connects-buying or account-hack guide</li>
+        <li>Not a guarantee of wins or income</li>
+        <li>Not a new payment marketplace</li>
+        <li>Not an LLM API product — v1 scorer is local heuristics only</li>
+      </ul>
+    </section>
+
+    <!-- F. Optional paid pack -->
+    <section class="wrap section paid" id="paid-pack">
+      <h2>Optional paid pack</h2>
+      <p>Want a clean printable / fillable file for every bid?</p>
+      <div class="pack card">
+        <p class="pack-name">First Cash Pre-Submit Gate Checklist</p>
+        <p class="badge">Digital download · $12</p>
+        <ul>
+          <li>PDF-ready markdown checklist</li>
+          <li>Fill fields + archive habit</li>
+          <li>Same six HARD gates as above — packaged for print</li>
+        </ul>
+        <p>
+          <a class="btn btn-secondary" href="https://www.getly.store/product/first-cash-pre-submit-gate-checklist" rel="noopener noreferrer" target="_blank">Get the $12 pack on Getly</a>
+        </p>
+        <p class="fine">Existing Getly listing only. No invented bestsellers, star ratings, or sales counts. Seller PaymentReceived remains 0 until a real sale clears.</p>
+      </div>
+    </section>
+
+    <!-- G. FAQ -->
+    <section class="wrap section" id="faq">
+      <h2>FAQ</h2>
+      <dl class="faq">
+        <dt>Is the checklist free?</dt>
+        <dd>Yes — the full hard-gate method and the in-browser scorer are on this page. The $12 pack is the printable/fillable file for people who want a clean download.</dd>
+
+        <dt>How does the scorer work?</dt>
+        <dd>Client-side JavaScript applies a transparent keyword/heuristic rubric to the six HARD gates. It is <strong>not</strong> a large language model and does not call a paid API. Treat FAIL as SKIP; treat CAUTION as “verify with evidence.”</dd>
+
+        <dt>Do I need Upwork?</dt>
+        <dd>No. Same gates work on any paid bid/quote surface. Examples use Upwork language because that is where search intent is loudest.</dd>
+
+        <dt>Will this make me money?</dt>
+        <dd>No tool guarantees revenue. This only helps you <strong>not submit</strong> jobs that fail basic cash gates. We do not claim past sales or client wins.</dd>
+
+        <dt>Is this another AI proposal spammer?</dt>
+        <dd>No. It is a <strong>stop/go gate</strong>. Soft notes never alone approve a bid.</dd>
+
+        <dt>Where do I buy the pack?</dt>
+        <dd>Existing <a href="https://www.getly.store/product/first-cash-pre-submit-gate-checklist" rel="noopener noreferrer" target="_blank">Getly listing</a> only. We are not opening extra shops for the same SKU.</dd>
+
+        <dt>Can I share this page?</dt>
+        <dd>Yes. Linking the free checklist into helpful answers is encouraged; hard-sell spam is not.</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Langford Outcomes</strong> — free bid-gate checklist + heuristic scorer.</p>
+      <p class="fine">No fabricated social proof. Path target when live: <code>/tools/bid-gate-checklist</code>. PaymentReceived=0.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('copy-md');
+      var block = document.getElementById('md-block');
+      if (!btn || !block) return;
+      btn.addEventListener('click', function () {
+        var text = block.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            btn.textContent = 'Copied';
+            setTimeout(function () { btn.textContent = 'Copy markdown'; }, 1500);
+          });
+        } else {
+          var range = document.createRange();
+          range.selectNodeContents(block);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          try { document.execCommand('copy'); btn.textContent = 'Copied'; } catch (e) {}
+          setTimeout(function () { btn.textContent = 'Copy markdown'; }, 1500);
+        }
+      });
+    })();
+  </script>
+  <script src="scorer.js" defer></script>
+</body>
+</html>
