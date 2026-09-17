@@ -6,8 +6,6 @@
 (function () {
   'use strict';
 
-  var GETLY =
-    'https://www.getly.store/product/first-cash-pre-submit-gate-checklist';
 
   function norm(s) {
     return String(s || '')
@@ -371,16 +369,12 @@
 
     var next = el('div', 'score-next card');
     if (result.verdict === 'GO') {
-      next.appendChild(el('p', null, 'Next: write a one-line delivery plan, then bid. Optional printable pack if you want a fillable archive sheet.'));
+      next.appendChild(el('p', null, 'Next: write a one-line delivery plan, then bid.'));
     } else if (result.verdict === 'CAUTION') {
       next.appendChild(el('p', null, 'Next: resolve each “?” gate with evidence. If still unsure, skip — Connects are finite.'));
     } else {
       next.appendChild(el('p', null, 'Next: do not submit. Re-scope, find another job, or fix the failed gate first.'));
     }
-    var a = el('a', 'btn btn-quiet');
-    a.href = '#paid-pack';
-    a.textContent = 'Optional $12 printable pack';
-    next.appendChild(a);
     out.appendChild(next);
   }
 
